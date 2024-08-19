@@ -1,0 +1,224 @@
+
+body { 
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #021d26;
+    padding: 8px;
+}
+
+.navbar {
+    background-color: rgba(2, 29, 38, 0.8); /* Makes the navbar slightly transparent */
+}
+
+.navbar-brand img {
+    height: 50px; /* Adjust the height as needed */
+    width: auto;  /* Keeps the image's aspect ratio intact */
+    max-width: 100%; /* Adjust the max-width as needed */      
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    color: #d4f1fc; /* Light color for navbar links */
+    font-size: 16px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffcc00; /* Highlight color on hover */
+}
+
+
+
+
+.carousel-inner img {
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+}
+
+
+/* .carousel-item p {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 20px;
+    width: 70%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+.carousel-control-prev,
+.carousel-control-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -30vh;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.carousel-control-next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+} */
+
+
+
+
+.who-we-are-section {
+    background-color: #8ac5df;
+    color: #F7F7F8; 
+    padding: 50px 0;
+} 
+
+/*.service-card img, 
+.who-we-are-section img, 
+.carousel-inner img {
+    max-width: 100%;
+    max-height: 300px; 
+}
+
+.carousel-auto {
+    max-width: 100%;
+    max-height: 450px; 
+}
+
+*/ 
+
+
+
+.carousel {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden; /* Ensures no overflow from images */
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+}
+
+/* .carousel-inner img {
+    max-width: 100%;
+    height: auto;
+} */
+
+/* .carousel-auto img {
+    max-width: 100%;
+    max-height: 400px; 
+} */
+
+.carousel-caption {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 100%;
+    text-align: center;
+}
+
+/* Adjust text size for different screen sizes */
+.carousel-caption p {
+    font-weight: bold;
+    font-size: 2rem; /* Base font size */
+    color: white;
+    margin: 0;
+}
+
+/* Adjust text size based on screen width */
+
+
+.carousel-control-prev, .carousel-control-next {
+    padding: 0;
+    margin: 0 1rem;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* border-radius: 50%; */
+}
+
+.carousel-item img {
+    width: 100%; 
+    max-height: 650px; 
+}
+@media (min-width: 768px) {
+    .carousel-caption p {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .carousel-caption p {
+        font-size: 2.5rem;
+    }
+}
+/* who are we section */
+.carousel-auto img {
+    max-width: 100%;
+    max-height: 400px; 
+} 
+
+/* Contact Us Section */
+.contact-us-section {
+    background-image: url('../images/slide2.jpeg'); /* Set slide2.jpeg as background */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    color: #F7F7F8; /* Text color for contrast */
+    padding: 50px 0; /* Add padding for spacing */
+    position: relative; /* Ensure the content is positioned correctly */
+    z-index: 1; /* Position the content above the background */
+}
+
+.contact-us-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Black transparent overlay */
+    z-index: -1; /* Ensure overlay is behind the content */
+}
+
+.contact-us-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Remove padding on mobile devices */
+@media (max-width: 767.98px) {
+    .services-section {
+        /* padding-left: 0 !important;
+        padding-right: 0 !important; */
+        padding: 0 !important;
+    }
+}
+
+/* Adjust padding on tablets */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .services-section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+
+
+
+
+

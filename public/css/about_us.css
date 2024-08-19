@@ -1,0 +1,43 @@
+/* General styles for the About Us section */
+.about-section {
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    color: #F7F7F8; /* Text color for contrast */
+    padding: 50px 0; /* Add padding for spacing */
+    position: relative; /* Ensure the content is positioned correctly */
+    z-index: 1; /* Position the content above the background */
+}
+
+
+
+.about-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.about-section .section-header {
+    font-size: 2.5rem; /* Adjust the font size for the section header */
+    color: #F7F7F8; /* Text color for the header */
+}
+
+
+
+.team-member img {
+    border-radius: 50%; /* Circular images for team members */
+    max-width: 150px; /* Max width for team member images */
+    margin-bottom: 1rem; /* Space below the image */
+    width: auto; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.team-member h5 {
+    margin: 0.5rem 0; /* Space above and below name */
+    font-size: 1.25rem; /* Font size for name */
+    color: #F7F7F8; /* Text color for name */
+}
+
+.team-member p {
+    font-size: 1rem; /* Font size for position */
+    color: #D0D0D0; /* Lighter text color for position */
+}
