@@ -36,74 +36,11 @@ body {
 }
 
 
-/* .carousel-item p {
-    position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    color: #fff;
-    padding: 20px;
-    width: 70%;
-    text-align: center;
-    border-radius: 10px;
-}
-
-
-.carousel-control-prev,
-.carousel-control-next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -30vh;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-.carousel-control-next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-} */
-
-
-
-
-.who-we-are-section {
-    background-color: #8ac5df;
-    color: #F7F7F8; 
-    padding: 50px 0;
-} 
-
-/*.service-card img, 
-.who-we-are-section img, 
-.carousel-inner img {
-    max-width: 100%;
-    max-height: 300px; 
-}
-
-.carousel-auto {
-    max-width: 100%;
-    max-height: 450px; 
-}
-
-*/ 
-
-
 
 .carousel {
     padding: 0 !important;
     margin: 0 !important;
-    overflow: hidden; /* Ensures no overflow from images */
+    overflow: hidden;
 }
 
 .carousel-inner {
@@ -111,35 +48,34 @@ body {
     width: 100%;
 }
 
-/* .carousel-inner img {
-    max-width: 100%;
-    height: auto;
-} */
-
-/* .carousel-auto img {
-    max-width: 100%;
-    max-height: 400px; 
-} */
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
 
 .carousel-caption {
     position: absolute;
     bottom: 50%;
-    left: 50%;
+    left: 100%;
     transform: translate(-50%, 50%);
     width: 100%;
     text-align: center;
 }
 
-/* Adjust text size for different screen sizes */
 .carousel-caption p {
     font-weight: bold;
-    font-size: 2rem; /* Base font size */
+    font-family: "Oleo Script", system-ui;
     color: white;
     margin: 0;
+    opacity: 0; /* Start hidden */
+    animation: slideUp 1s ease-out forwards;
 }
-
-/* Adjust text size based on screen width */
-
 
 .carousel-control-prev, .carousel-control-next {
     padding: 0;
@@ -148,13 +84,19 @@ body {
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.5);
-    /* border-radius: 50%; */
 }
 
 .carousel-item img {
     width: 100%; 
     max-height: 650px; 
 }
+
+@media (max-width: 767.98px) {
+    .carousel-caption p {
+        font-size: 1.2rem;
+    }
+}
+
 @media (min-width: 768px) {
     .carousel-caption p {
         font-size: 2rem;
@@ -166,11 +108,46 @@ body {
         font-size: 2.5rem;
     }
 }
+
 /* who are we section */
-.carousel-auto img {
+/* .carousel-auto img {
     max-width: 100%;
     max-height: 400px; 
+}  */
+.who-we-are-section {
+    background-color: #8ac5df;
+    color: #F7F7F8; 
+    padding: 50px 0;
 } 
+.carousel-auto img {
+    max-width: 100%;
+    max-height: 400px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for zoom effect */
+    transform-origin: center center;
+}
+
+.carousel-auto img:hover {
+    transform: scale(1.1); /* Zooms in the image on hover */
+    filter: brightness(0.9); /* Slightly darkens the image on hover */
+}
+
+/* Parallax scroll effect */
+.who-we-are-section {
+    position: relative;
+    overflow: hidden; /* Ensures no overflow */
+    background-attachment: fixed; /* Parallax effect */
+    background-size: cover;
+}
+
+.carousel-auto img {
+    transform: translateY(0);
+    transition: transform 0.5s ease-out;
+}
+
+/* Adjust parallax effect based on scroll */
+.who-we-are-section.scroll-effect .carousel-auto img {
+    transform: translateY(-20%);
+}
 
 /* Contact Us Section */
 .contact-us-section {
@@ -201,6 +178,29 @@ body {
 }
 
 /* Remove padding on mobile devices */
+.service-card {
+    overflow: hidden; /* Ensures the image doesn't overflow the card */
+    border-radius: 10px; /* Rounded corners for the card */
+    transition: transform 0.3s ease-in-out; /* Smooth transform effect */
+}
+
+/* Image styling */
+.service-card img {
+    transition: transform 0.3s ease-in-out; /* Smooth transform effect on the image */
+    width: 100%; /* Ensure the image fits the card */
+    border-radius: 10px 10px 0 0; /* Rounded corners for the image */
+}
+
+/* Hover effect on the card */
+.service-card:hover img {
+    transform: scale(1.1); /* Zoom in on the image */
+}
+
+/* Hover effect on the card body */
+.service-card:hover {
+    transform: translateY(-10px); /* Move the card up slightly */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+}
 @media (max-width: 767.98px) {
     .services-section {
         /* padding-left: 0 !important;
@@ -218,7 +218,33 @@ body {
 }
 
 
+.oleo-script-regular {
+    font-family: "Oleo Script", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.oleo-script-bold {
+font-family: "Oleo Script", system-ui;
+font-weight: 700;
+font-style: normal;
+}
 
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Oleo Script", system-ui;
+    font-weight: 700; /* Bold weight for headers */
+}
 
+/* Apply Oleo Script font to links */
+a {
+    font-family: "Oleo Script", system-ui;
+    font-weight: 400; /* Regular weight for links */
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color from parent */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
 
 

@@ -1,14 +1,8 @@
-$(document).ready(function () {
-    // Initialize the Who We Are slider to automatically slide every 3 seconds
-    $('#whoWeAreSlider').carousel({
-        interval: 3000
-    });
-});
+
 // window.addEventListener('scroll', function() {
 //     const header = document.querySelector('header');
 //     header.classList.toggle('scrolled', window.scrollY > 50);
 //   });
-  
   
 //       let slideIndex = 0;
 //       let autoSlideTimeout;
@@ -36,19 +30,20 @@ $(document).ready(function () {
   
 //       showSlides();  // Start the slideshow
   
-document.addEventListener('scroll', function() {
-    var carousel = document.querySelector('#mainSlider');
-    var carouselItems = carousel.querySelectorAll('.carousel-item');
-    
-    carousel.addEventListener('slide.bs.carousel', function (e) {
-        var nextSlide = e.relatedTarget;
-        carouselItems.forEach(function(item) {
-            item.querySelector('p').style.display = 'none';
-        });
-        nextSlide.querySelector('p').style.display = 'block';
+// document.addEventListener('scroll', function() {
+//     var carousel = document.querySelector('#mainSlider');
+//     var carouselItems = carousel.querySelectorAll('.carousel-item'); 
+//     carousel.addEventListener('slide.bs.carousel', function (e) {
+//         var nextSlide = e.relatedTarget;
+//         carouselItems.forEach(function(item) {
+//             item.querySelector('p').style.display = 'none';
+//         });
+//         nextSlide.querySelector('p').style.display = 'block';
+//     });
+//     carouselItems[0].querySelector('p').style.display = 'block';
+// });
+$(document).ready(function () {
+    $('#whoWeAreSlider').carousel({
+        interval: 3000
     });
-    carouselItems[0].querySelector('p').style.display = 'block';
-});
-  
-  
-  
+});  
