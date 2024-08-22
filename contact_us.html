@@ -39,27 +39,28 @@
             <h2 class="section-header text-center mb-4 text-white">Contact Us</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-white">
-                    <form action="send_email.php" method="post">
-                        <div class="row ">
-                            <div class="col-md-6 mb-3">
-                                <label for="name" class="form-label text-white">Name</label>
-                                <input type="text"  class="form-control" placeholder="fullname" id="name" name="name" required>
+                    <!-- <form action="send_email.php" method="post"> -->
+                        <form id="contactForm" action="send_email.php" method="post">
+                            <div class="row ">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label text-white">Name</label>
+                                    <input type="text" class="form-control" placeholder="fullname" id="name" name="name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" placeholder="example@gmail.com" id="email" name="email" required>
+                                </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" placeholder="example@gmail.com" id="email" name="email" required>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" placeholder="what is this message about" id="subject" name="subject">
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" class="form-control" placeholder="what is this message about" id="subject" name="subject">
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" placeholder="message content" name="message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-success">Send Message</button>
-                    </form>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" placeholder="message content" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="button" class="btn btn-success" onclick="sendMail()">Contact Us</button>
+                        </form>
                 </div>
             </div>
         </div>
@@ -104,5 +105,17 @@
     <!-- <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script> -->
+    <script>
+        function sendMail() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+    
+            var mailtoLink = `mailto:Mohammed.Elganzoury511@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
+    
+            window.location.href = mailtoLink;
+        }
+    </script>
 </body>
 </html>
